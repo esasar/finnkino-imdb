@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Finnkino IMDB score",
+  "version": "1.0",
+  "description": "Adds IMDB score to movies in finnkino.fi",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://www.omdbapi.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.finnkino.fi/*"],
+      "js": ["dist/bundle.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
